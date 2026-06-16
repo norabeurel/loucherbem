@@ -1,12 +1,13 @@
 # Loucherbem
-***
 It is a website for translating words into Loucherbem, developed in PHP.
+***
 
 ## Version
 * PHP : 8.3.31
+***
 
 ## Install
-***
+
 
 ### Install Docker and Docker Compose 
 [Install guide - Docker](https://docs.docker.com/engine/install/)
@@ -18,11 +19,12 @@ Run the command
 ```
 docker compose up
 ```
-
-### Access the interface
-http://localhost:8000/
-
-## Credits 
 ***
-Created by Nora Beurel 
 
+## Access the interface
+Go to a browser and enter http://localhost:8000/
+***
+
+## Credits
+Created by Nora Beurel 
+***
