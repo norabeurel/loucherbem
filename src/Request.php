@@ -31,24 +31,24 @@ class Request
   }
 
   /**
-   * @param $keyname
+   * @param $fieldname
    *
    * @return bool
    */
-  public function has($keyname): bool
+  public function has($fieldname): bool
   {
-    return array_key_exists($keyname, $this->request);
+    return array_key_exists($fieldname, $this->request);
   }
 
   /**
-   * @param string $keyname
+   * @param string $fieldname
    * @param $default
    *
    * @return mixed
    */
-  public function get(string $keyname, $default = null): mixed
+  public function getValueByFieldname(string $fieldname, $default = null): mixed
   {
-    return $this->has($keyname) ? $this->request[$keyname] : $default;
+    return $this->has($fieldname) ? $this->request[$fieldname] : $default;
   }
 
 }

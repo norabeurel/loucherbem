@@ -60,4 +60,19 @@ class Word
     return $this;
   }
 
+  /**
+   * @param string $word
+   *
+   * @return string
+   */
+  protected function wordTransform(string $word): string
+  {
+    $firstChar = substr($word,0,1);
+    $firstChar = strtolower($firstChar);
+
+    $afterFirstChar = substr($word,1);
+    $afterFirstChar = strtolower($afterFirstChar);
+
+    return "L{$afterFirstChar}{$firstChar}{$this->request->getValueByFieldname("terminaison")}";
+  }
 }

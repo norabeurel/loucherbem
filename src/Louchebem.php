@@ -2,7 +2,7 @@
 include "Request.php";
 include "Word.php";
 
-class Loucherbem
+class Louchebem
 {
 
   /**
@@ -43,22 +43,22 @@ class Loucherbem
   /**
    * @return $this
    */
-  public function execute(): Loucherbem
+  public function execute(): louchebem
   {
     if($this->request->isPost())
     {
-      if(!$this->request->get('word'))
+      if(!$this->request->getValueByFieldname('word'))
       {
         $this->addError("word", "Cette valeur est requise !!!");
       }
-      if(!$this->request->get('terminaison'))
+      if(!$this->request->getValueByFieldname('terminaison'))
       {
         $this->addError("terminaison", "Cette valeur est requise !!!");
       }
 
       if(count($this->errors) <= 0)
       {
-        $words = explode(" ", $this->request->get("word"));
+        $words = explode(" ", $this->request->getValueByFieldname("word"));
         foreach ($words as $word)
         {
           $this->addWord($word, $this->wordTransform($word));
@@ -66,22 +66,6 @@ class Loucherbem
       }
     }
     return $this;
-  }
-
-  /**
-   * @param string $word
-   *
-   * @return string
-   */
-  protected function wordTransform(string $word): string
-  {
-    $firstChar = substr($word,0,1);
-    $firstChar = strtolower($firstChar);
-
-    $afterFirstChar = substr($word,1);
-    $afterFirstChar = strtolower($afterFirstChar);
-
-    return "L{$afterFirstChar}{$firstChar}{$this->request->get("terminaison")}";
   }
 
   /**
@@ -105,7 +89,7 @@ class Loucherbem
    *
    * @return $this
    */
-  public function setTerminaisons(array $terminaisons): Loucherbem
+  public function setTerminaisons(array $terminaisons): louchebem
   {
     $this->terminaisons = $terminaisons;
     return $this;
@@ -117,7 +101,7 @@ class Loucherbem
    *
    * @return $this
    */
-  public function addWord(string $word, ?string $wordTransform = null): Loucherbem
+  public function addWord(string $word, ?string $wordTransform = null): louchebem
   {
     $this->words[] = new Word($word, $wordTransform);
     return $this;
@@ -150,7 +134,7 @@ class Loucherbem
    *
    * @return $this
    */
-  public function setWords(array $words): Loucherbem
+  public function setWords(array $words): louchebem
   {
     $this->words = $words;
     return $this;
@@ -162,7 +146,7 @@ class Loucherbem
    *
    * @return $this
    */
-  public function addError(string $fieldname, string $message): Loucherbem
+  public function addError(string $fieldname, string $message): louchebem
   {
     $this->errors[$fieldname] = $message;
     return $this;
@@ -191,10 +175,26 @@ class Loucherbem
    *
    * @return $this
    */
-  public function setErrors(array $errors): Loucherbem
+  public function setErrors(array $errors): louchebem
   {
     $this->errors = $errors;
     return $this;
+  }
+
+  /**
+   * @param string $word
+   * @deprecated use wordTransform fonction into Word.php
+   * @return string
+   */
+  protected function wordTransform(string $word): string
+  {
+    $firstChar = substr($word,0,1);
+    $firstChar = strtolower($firstChar);
+
+    $afterFirstChar = substr($word,1);
+    $afterFirstChar = strtolower($afterFirstChar);
+
+    return "L{$afterFirstChar}{$firstChar}{$this->request->getValueByFieldname("terminaison")}";
   }
 
 }

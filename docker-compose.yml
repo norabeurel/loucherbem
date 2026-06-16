@@ -1,7 +1,7 @@
 services:
-  loucherbem-php:
+  louchebem-php:
     image: php:8.3-cli
-    container_name: loucherbem
+    container_name: louchebem
     ports:
       - "8000:8000"
     volumes:

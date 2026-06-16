@@ -1,5 +1,5 @@
-# Loucherbem
-It is a website for translating words into Loucherbem, developed in PHP.
+# louchebem
+It is a website for translating words into louchebem, developed in PHP.
 ***
 
 ## Version
