@@ -98,11 +98,13 @@ class Word
   {
     $this->voyelle = array('a', 'e', 'i', 'o', 'u', 'y');
     $word = $this->word;
-    $word = strtolower($word);
     $startLetter = substr($word,0,1);
+    $louchebemPrefix = ctype_upper($startLetter) ? "L" : "l";
+    $word = strtolower($word);
+    $startLetter = strtolower($startLetter);
     if(in_array($startLetter, $this->voyelle))
     {
-      return "L{$word}{$this->terminaison}";
+      return "{$louchebemPrefix}{$word}{$this->terminaison}";
     }
 
     $letters = str_split(substr($word,1));
@@ -118,6 +120,6 @@ class Word
       }
     }
     $afterStartLetter = str_replace($startLetter, "", $word);
-    return "L{$afterStartLetter}{$startLetter}{$this->terminaison}";
+    return "{$louchebemPrefix}{$afterStartLetter}{$startLetter}{$this->terminaison}";
   }
 }
