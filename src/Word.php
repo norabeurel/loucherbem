@@ -18,7 +18,10 @@ class Word
    */
   protected ?string $wordTransform = null;
 
-
+  /**
+   * @var array
+   */
+  protected array $voyelle = array('a', 'e', 'i', 'o', 'u', 'y');
 
   /**
    * Construct Word
@@ -88,19 +91,33 @@ class Word
   }
 
   /**
-   * @param string $word
    *
    * @return string
    */
   protected function wordTransform(): string
   {
+    $this->voyelle = array('a', 'e', 'i', 'o', 'u', 'y');
     $word = $this->word;
-    $firstChar = substr($word,0,1);
-    $firstChar = strtolower($firstChar);
+    $word = strtolower($word);
+    $startLetter = substr($word,0,1);
+    if(in_array($startLetter, $this->voyelle))
+    {
+      return "L{$word}{$this->terminaison}";
+    }
 
-    $afterFirstChar = substr($word,1);
-    $afterFirstChar = strtolower($afterFirstChar);
-
-    return "L{$afterFirstChar}{$firstChar}{$this->terminaison}";
+    $letters = str_split(substr($word,1));
+    foreach($letters as $letter)
+    {
+      if(!in_array($letter, $this->voyelle))
+      {
+        $startLetter .= $letter;
+      }
+      else
+      {
+        break;
+      }
+    }
+    $afterStartLetter = str_replace($startLetter, "", $word);
+    return "L{$afterStartLetter}{$startLetter}{$this->terminaison}";
   }
 }
