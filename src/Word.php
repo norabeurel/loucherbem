@@ -9,17 +9,25 @@ class Word
   protected string $word;
 
   /**
+   * @var string
+   */
+  protected string $terminaison;
+
+  /**
    * @var string|null
    */
   protected ?string $wordTransform = null;
 
+
+
   /**
    * Construct Word
    */
-  public function __construct(string $word, ?string $wordTransform = null)
+  public function __construct(string $word, string $terminaison)
   {
     $this->word = $word;
-    $this->wordTransform = $wordTransform;
+    $this->terminaison = $terminaison;
+    $this->wordTransform = $this->wordTransform();
   }
 
   /**
@@ -38,6 +46,25 @@ class Word
   public function setWord(string $word): Word
   {
     $this->word = $word;
+    return $this;
+  }
+
+  /**
+   * @return string
+   */
+  public function getTerminaison(): string
+  {
+    return $this->terminaison;
+  }
+
+  /**
+   * @param string $terminaison
+   *
+   * @return $this
+   */
+  public function setTerminaison(string $terminaison): Word
+  {
+    $this->terminaison = $terminaison;
     return $this;
   }
 
@@ -65,14 +92,15 @@ class Word
    *
    * @return string
    */
-  protected function wordTransform(string $word): string
+  protected function wordTransform(): string
   {
+    $word = $this->word;
     $firstChar = substr($word,0,1);
     $firstChar = strtolower($firstChar);
 
     $afterFirstChar = substr($word,1);
     $afterFirstChar = strtolower($afterFirstChar);
 
-    return "L{$afterFirstChar}{$firstChar}{$this->request->getValueByFieldname("terminaison")}";
+    return "L{$afterFirstChar}{$firstChar}{$this->terminaison}";
   }
 }

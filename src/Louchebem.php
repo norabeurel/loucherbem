@@ -61,7 +61,7 @@ class Louchebem
         $words = explode(" ", $this->request->getValueByFieldname("word"));
         foreach ($words as $word)
         {
-          $this->addWord($word, $this->wordTransform($word));
+          $this->addWord($word);
         }
       }
     }
@@ -97,13 +97,12 @@ class Louchebem
 
   /**
    * @param string $word
-   * @param string|null $wordTransform
    *
    * @return $this
    */
-  public function addWord(string $word, ?string $wordTransform = null): louchebem
+  public function addWord(string $word): louchebem
   {
-    $this->words[] = new Word($word, $wordTransform);
+    $this->words[] = new Word($word, $this->request->getValueByFieldname("terminaison"));
     return $this;
   }
 
@@ -179,22 +178,6 @@ class Louchebem
   {
     $this->errors = $errors;
     return $this;
-  }
-
-  /**
-   * @param string $word
-   * @deprecated use wordTransform fonction into Word.php
-   * @return string
-   */
-  protected function wordTransform(string $word): string
-  {
-    $firstChar = substr($word,0,1);
-    $firstChar = strtolower($firstChar);
-
-    $afterFirstChar = substr($word,1);
-    $afterFirstChar = strtolower($afterFirstChar);
-
-    return "L{$afterFirstChar}{$firstChar}{$this->request->getValueByFieldname("terminaison")}";
   }
 
 }
