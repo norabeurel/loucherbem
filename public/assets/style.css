@@ -1,0 +1,238 @@
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.margin-auto {
+  margin: 0 auto;
+
+}
+
+.width-container {
+  width: 1040px;
+}
+
+.header {
+  background-color: #45ac89;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.title-1 {
+  color: white;
+  text-align: center;
+  font-family: "Chango", sans-serif;
+  font-size: 45px;
+  text-shadow: 5px 5px 5px #227759;
+  margin: 0;
+}
+.explanation-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  align-content: normal;
+  border: solid 4px #1b7157;
+  border-radius: 10px;
+  padding: 40px;
+  background-color: rgb(219 255 243 / 0.78);
+
+}
+
+.title-2 {
+  font-size: 30px;
+  margin: 0 0 15px 0;
+  text-decoration: underline;
+}
+
+.explanation {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+
+}
+
+.wikipedia-source {
+  font-size: 10px;
+}
+
+.title-2 {
+  text-decoration: underline;
+  font-family: "Averia Sans Libre", sans-serif;
+  font-size: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.top-container {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+}
+
+.missingValue {
+  color: #ff0000;
+  font-size: 15px;
+  margin: 0 0 10px 0;
+  width: 100%;
+}
+
+.word-input {
+ display: flex;
+ flex-direction: column;
+  width: 100%;
+}
+
+.terminaison-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.label {
+  font-size: 20px;
+  width: 100%;
+}
+.input {
+  height: 50px;
+  margin : 10px 0 2px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.input:hover {
+  border: solid 3px #45ac89;
+}
+
+.select {
+  width: 100%;
+  height: 50px;
+  margin : 10px 0 2px 0;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.select:hover {
+  border: solid 3px #45ac89;
+}
+
+.advice {
+  text-align: center;
+}
+
+.advice-message {
+  font-size: 10px;
+}
+
+.send-button {
+  width: 150px;
+  height: 35px;
+  background-color: #7ad8b8;
+  text-align: center;
+  color: black;
+  border: solid 2px #1b7157;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-left: auto;
+  font-size: 17px;
+}
+
+.send-button:hover {
+  background-color: #a5e6d0;
+}
+
+.response {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex: 1;
+  margin: 20px 0;
+  border: solid 3px #1b7157;
+  border-radius: 10px;
+}
+
+.response-title-container {
+
+}
+
+.response-title {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.response-text {
+  font-size: 15px;
+}
+
+.footer {
+  background-color: #45ac89;
+  width:100%;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: auto;
+}
+.footer-text {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.github-logo {
+  display: flex;
+  margin-top: auto;
+  margin-left: auto;
+  color: #000000;
+}
+
+.github-logo:hover {
+  fill: #ffffff;
+}
+
+a {
+  text-decoration: underline;
+  color: #03231a;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #025a3b;
+}
