@@ -58,8 +58,9 @@ class Louchebem
 
       if(count($this->errors) <= 0)
       {
-        $words = explode(" ", $this->request->getValueByFieldname("word"));
-        foreach ($words as $word)
+        $wordsSends = $this->request->getValueByFieldname("word");
+        preg_match_all("/[\p{L}'']+/u", $wordsSends, $words);
+        foreach ($words[0] as $word)
         {
           $this->addWord($word);
         }
@@ -111,13 +112,15 @@ class Louchebem
    */
   public function viewTransformWords(): string
   {
-    $wordTransform = array();
+    $wordsSearch = array();
+    $wordsReplace = array();
     /** @var Word $word */
     foreach($this->getWords() as $word)
     {
-      $wordTransform[] = $word->getWordTransform();
+      $wordsSearch[] = "/(?<![A-Za-z'])" . preg_quote($word->getWord(), '/') . "(?![A-Za-z'])/";
+      $wordsReplace[] = $word->getWordTransform();
     }
-    return implode(" ", $wordTransform);
+    return preg_replace($wordsSearch, $wordsReplace, $this->request->getValueByFieldname("word"));
   }
 
   /**

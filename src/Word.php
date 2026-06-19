@@ -21,7 +21,7 @@ class Word
   /**
    * @var array
    */
-  protected array $voyelle = array('a', 'e', 'i', 'o', 'u', 'y');
+  protected array $voyelle = array('a', 'à', 'â', 'e', 'é', 'è', 'ê', 'ë', 'i', 'î', 'ï', 'o', 'ô', 'u', 'ù', 'û', 'ü', 'y', 'ÿ', 'œ');
 
   /**
    * Construct Word
@@ -96,30 +96,25 @@ class Word
    */
   protected function wordTransform(): string
   {
-    $this->voyelle = array('a', 'e', 'i', 'o', 'u', 'y');
     $word = $this->word;
     $startLetter = substr($word,0,1);
     $louchebemPrefix = ctype_upper($startLetter) ? "L" : "l";
+
     $word = strtolower($word);
     $startLetter = strtolower($startLetter);
-    if(in_array($startLetter, $this->voyelle))
-    {
+    if (in_array($startLetter, $this->voyelle)) {
       return "{$louchebemPrefix}{$word}{$this->terminaison}";
     }
-
-    $letters = str_split(substr($word,1));
-    foreach($letters as $letter)
-    {
-      if(!in_array($letter, $this->voyelle))
-      {
+    $letters = mb_str_split(substr($word, 1), 1, "UTF-8");
+    foreach ($letters as $letter) {
+      if (!in_array($letter, $this->voyelle)) {
         $startLetter .= $letter;
-      }
-      else
-      {
+      } else {
         break;
       }
     }
     $afterStartLetter = str_replace($startLetter, "", $word);
     return "{$louchebemPrefix}{$afterStartLetter}{$startLetter}{$this->terminaison}";
+
   }
 }
