@@ -120,7 +120,11 @@ class Louchebem
       $wordsSearch[] = "/(?<![A-Za-z'])" . preg_quote($word->getWord(), '/') . "(?![A-Za-z'])/";
       $wordsReplace[] = $word->getWordTransform();
     }
-    return preg_replace($wordsSearch, $wordsReplace, $this->request->getValueByFieldname("word"));
+    if($this->request->getValueByFieldname("word") && count($this->errors) <= 0)
+    {
+      return preg_replace($wordsSearch, $wordsReplace, $this->request->getValueByFieldname("word"));
+    }
+    return "";
   }
 
   /**

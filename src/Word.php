@@ -113,7 +113,7 @@ class Word
         break;
       }
     }
-    $afterStartLetter = str_replace($startLetter, "", $word);
+    $afterStartLetter = substr($word, strlen($startLetter));
     return "{$louchebemPrefix}{$afterStartLetter}{$startLetter}{$this->terminaison}";
 
   }
