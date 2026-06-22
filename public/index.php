@@ -12,11 +12,11 @@ $louchebem->execute();
   <meta name="description" content="Traducteur louchebem gratuit : traduisez vos mots et expressions en louchebem, l'argot traditionnel des bouchers français, rapidement et simplement en ligne.">
   <meta name="robots" content="" />
   <link href="assets/reset.css" rel="stylesheet">
-  <link href="assets/style.css" rel="stylesheet">
+  <link href="assets/style.css?version=1.0.0" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chango&family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-  <script defer src="assets/jenesaispas.js"></script>
+  <script defer src="assets/jenesaispas.js?version=1.0.0"></script>
   <link rel="icon" type="image/x-icon" href="assets/favicon.png">
 </head>
 
