@@ -10,7 +10,7 @@ $louchebem->execute();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Traducteur louchebem gratuit : traduisez vos mots et expressions en louchebem, l'argot traditionnel des bouchers français, rapidement et simplement en ligne.">
-  <meta name="robots" content="" />
+  <meta name="robots" content="index, follow" />
   <link href="assets/reset.css" rel="stylesheet">
   <link href="assets/style.css?version=1.0.0" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
