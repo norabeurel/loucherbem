@@ -21,7 +21,7 @@ class Word
   /**
    * @var array
    */
-  protected array $voyelle = array('a', 'à', 'â', 'e', 'é', 'è', 'ê', 'ë', 'i', 'î', 'ï', 'o', 'ô', 'u', 'ù', 'û', 'ü', 'y', 'ÿ', 'œ');
+  protected array $voyelle = array('a', 'à', 'â', 'ä', 'e', 'é', 'è', 'ê', 'ë', 'i', 'î', 'ï', 'o', 'ô', 'ö', 'u', 'ù', 'û', 'ü', 'y', 'ÿ', 'œ', 'æ');
 
   /**
    * Construct Word
