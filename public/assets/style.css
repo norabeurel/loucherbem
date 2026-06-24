@@ -96,6 +96,11 @@ body {
   width: 1000px;
 }
 
+.form {
+  width: 100%;
+  max-width: 600px;
+}
+
 .missing-value {
   color: #aa0000;
   font-size: 15px;
@@ -259,6 +264,13 @@ body {
   right: 0;
   transition-property: fill;
   transition-duration: 800ms;
+}
+
+.langue-de-feu-link {
+  display: flex;
+  position: absolute;
+  padding: 10px;
+  left: 0;
 }
 
 .copy-button {
