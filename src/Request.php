@@ -1,5 +1,7 @@
 <?php
 
+namespace Louchebem;
+
 class Request
 {
   

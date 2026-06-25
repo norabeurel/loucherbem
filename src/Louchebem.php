@@ -1,6 +1,8 @@
 <?php
-include "Request.php";
-include "Word.php";
+
+namespace Louchebem;
+use Louchebem\Request;
+use Louchebem\Word;
 
 class Louchebem
 {

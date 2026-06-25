@@ -1,5 +1,6 @@
 <?php
-include "../src/Louchebem.php";
+include "../vendor/autoload.php";
+use Louchebem\Louchebem;
 $louchebem = new Louchebem();
 $louchebem->execute();
 ?>
