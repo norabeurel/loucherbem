@@ -1,0 +1,29 @@
+{
+  "name": "norabeurel/louchebem",
+  "type": "project",
+  "description": "Un traducteur de mots en louchebem",
+  "keywords": [
+    "louchebem",
+    "traduction",
+    "langage",
+    "traducteur",
+    "argot"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nora Beurel",
+      "email": "nora.beurel@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "Louchebem\\": "src" }
+  },
+  "require": {
+    "php": ">=8.3 <9.0"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^6.4",
+    "symfony/debug-bundle": "^6.4"
+  }
+}
